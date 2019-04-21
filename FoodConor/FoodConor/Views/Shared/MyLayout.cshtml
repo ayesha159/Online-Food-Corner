@@ -1,0 +1,146 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <title>The Free Food-Store for Website Template | Home :: w3layouts</title>
+        <link href=@Url.Content("~/Content/MyTemplate/css/style.css") rel="stylesheet" type="text/css" media="all" />
+        <link href='//fonts.googleapis.com/css?family=Junge' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Monda:400,700' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,300,700' rel='stylesheet' type='text/css'>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="stylesheet" href=@Url.Content("~/Content/MyTemplate/css/craftyslide.css") />
+        <script src=@Url.Content("~/Content/MyTemplate/js/jquery-1.8.3.min.js")></script>
+        <script type=text/javascript>
+$(document).ready(function() {
+	$("#menu2 li").prepend("<span></span>"); //Throws an empty span tag right before the a tag
+
+	$("#menu2 li").each(function() { //For each list item...
+		var linkText = $(this).find("a").html(); //Find the text inside of the a tag
+		$(this).find("span").show().html(linkText); //Add the text in the span tag
+	});
+
+	$("#menu2 li").hover(function() {	//On hover...
+		$(this).find("span").stop().animate({
+			marginTop: "-40" //Find the span tag and move it up 40 pixels
+		}, 250);
+	} , function() { //On hover out...
+		$(this).find("span").stop().animate({
+			marginTop: "0" //Move the span back to its original state (0px)
+		}, 250);
+	});
+});
+        </script>
+        <script src=@Url.Content("~/Content/MyTemplate/js/responsiveslides.min.js")></script>
+        <script>
+    $(function () {
+      $("#slider").responsiveSlides({
+      	auto: true,
+      	nav: true,
+      	speed: 500,
+        namespace: "callbacks",
+        pager: true,
+      });
+    });
+
+        </script>
+        <div class="wrap">
+            <div class="header">
+                <div class="logo">
+                    <a href="index.html"><img src=@Url.Content("~/Content/MyTemplate/images/logo.png") title="logo" alt="" /></a>
+                </div>
+            </div>
+            <div id="menu2">
+                <ul>
+                   
+                    <li>@Html.ActionLink("HOME", "Index", "Home")</li>
+                    <li>@Html.ActionLink("ABOUT US", "About", "Home")</li>
+                    <li>@Html.ActionLink("PRODUCTS", "Products", "Home")</li>
+                    <li>@Html.ActionLink("CONTACT US", "Contact", "Home")</li>
+                    <li>
+                        <a href="">MY ACCOUNT</a>
+                        <ul>
+                            <li><a href="">AS ADMIN</a></li>
+                            <li><a href="">AS USER</a></li>
+                            
+                        </ul>
+                        </li>
+                </ul>
+            </div>
+            <div class="slider">
+                <div class="callbacks_container">
+                    <ul class="rslides" id="slider">
+                        <li>
+                            <img src=@Url.Content("~/Content/MyTemplate/images/slide1.jpg") alt="">
+                        </li>
+                        <li>
+                            <img src=@Url.Content("~/Content/MyTemplate/images/slide2.jpg") alt="">
+                        </li>
+                        <li>
+                            <img src=@Url.Content("~/Content/MyTemplate/images/slide3.jpg") alt="">
+                        </li>
+                        <li>
+                            <img src=@Url.Content("~/Content/MyTemplate/images/slide1.jpg") alt="">
+                        </li>
+                        <li>
+                            <img src=@Url.Content("~/Content/MyTemplate/images/slide2.jpg") alt="">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="clear"> </div>
+            <div class="para">
+                <p>
+                    Welcome to our website! Here we present world's best qulaity and delicious food according to your desire and choice.<br>
+                    You will find a variaty of desi as well as fast food of enriched standard and qualty. So enjoy the taste of life.
+                </p>
+            </div>
+
+        
+</head>
+    <body>
+        @RenderBody()
+        <div class="footer">
+            <div style="background:none;box-shadow:none;" class="wrap">
+                <ul>
+                    <li><h4>Recent-posts</h4></li>
+                    <li><a href="#">Sweet Potato Parmesan Tater Tots with Sriracha Ketchup is just ready.</a></li>
+                    <li><a href="#">Cheesecake Cake Batter Dip has been delivered.</a></li>
+                    <li><a href="#"> Fried Nutella Banana Hand Pies is about to be deliered.</a></li>
+                    <li><a href="#">Mac 'n' Cheese Burger is just paked.</a></li>
+                </ul>
+                <ul>
+                    <li><h4>Our-Services</h4></li>
+                    <li><a href="#">Free Delivery Service</a></li>
+                    <li><a href="#">Availability of delicious food of all types</a></li>
+                    <li><a href="#">Sections for different types of foods</a></li>
+                    <li><a href="#">Availability at a reasonable price.</a></li>
+                </ul>
+                <ul>
+                    <li><h4>Specials</h4></li>
+                    <li><a href="#">Refrigerators are available to preserve the food</a></li>
+                    <li><a href="#">Ovens are available to warm the food.</a></li>
+                    <li><a href="#">Istant delivery of fresh and warmed meal</a></li>
+                    <li><a href="#">Free health tips</a></li>
+                </ul>
+                <ul>
+                    <li><h4>Categories</h4></li>
+                    <li><a href="#">Restaurant Buffet</a></li>
+                    <li><a href="#">Fine Dining</a></li>
+                    <li><a href="#"> Fast Food</a></li>
+                    <li><a href="#">Desi food</a></li>
+                </ul>
+                <ul class="last">
+                    <li><h4>FOLLOWS US</h4></li>
+                    <li><a href="#"><img src=@Url.Content("~/Content/MyTemplate/images/facebook.png") title="facebook" alt="" /></a></li>
+                    <li><a href="#"> <img src=@Url.Content("~/Content/MyTemplate/images/twitter.png") title="twitter" alt="" /> </a></li>
+                    <li><a href="#"><img src=@Url.Content("~/Content/MyTemplate/images/rss.png") title="rss" alt="" /> </a></li>
+                </ul>
+                <div class="clear"> </div>
+                <div class="copy-right">
+                    <p>© 2013 Food-Store. All Rights Reserved | Design by <a href="http://w3layouts.com/">W3Layouts</a></p>
+                </div>
+            </div>
+            </div>
+        
+</body>
+</html>
