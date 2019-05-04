@@ -38,7 +38,7 @@
         
     <br><br><br>        
          <br />
-         <asp:Label ID="lblmsg" runat="server" />
+         <asp:Label ID="lblmsg" runat="server"  />
         </div>
     </div>
                            </div>

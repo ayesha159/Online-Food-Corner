@@ -12,7 +12,7 @@ namespace onlinefoodcorner
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["CurrentUser_ID"] == null) Response.Redirect("login.aspx");
+            if (Session["CurrentUser_ID"] == null ) Response.Redirect("login.aspx");
             AJ_DataClass ajdbClass = new AJ_DataClass();
             DataSet ds = new DataSet();
             string qry = "SELECT        Catagory.CatID, Catagory.CatName, Items.ItId, Items.ItName, Items.ItPrice, Items.itDesc " +
@@ -43,14 +43,14 @@ namespace onlinefoodcorner
             }
             string _heaed = "<table style='border:thin black; width:100% ; height:75px;background-color:white' cellpadding = '2' cellspacing = '2' >" +
 
-                 "<td style = 'color: #C0C0C0; background-color: deeppink' class='text-center'>ID</td>" +
-                 "<td style = 'color: #C0C0C0; background-color: deeppink' class='text-center'>Category</td>" +
-                 "<td style = 'color: #C0C0C0; background-color: deeppink' class='text-center'>Items</td>" +
-                 "<td style = 'color: #C0C0C0; background-color: deeppink' class='text-center'>Desc</td>" +
-                 "<td style = 'color: #C0C0C0; background-color: deeppink' class='text-center'>Price</td>" +
-                 "<td style = 'color: #C0C0C0; background-color: deeppink' class='text-center'>Food</td>" +
+                 "<td style = 'color: #C0C0C0; background-color: #FF5050' class='text-center'>ID</td>" +
+                 "<td style = 'color: #C0C0C0; background-color: #FF5050' class='text-center'>Category</td>" +
+                 "<td style = 'color: #C0C0C0; background-color: #FF5050' class='text-center'>Items</td>" +
+                 "<td style = 'color: #C0C0C0; background-color: #FF5050' class='text-center'>Desc</td>" +
+                 "<td style = 'color: #C0C0C0; background-color: #FF5050' class='text-center'>Price</td>" +
+                 "<td style = 'color: #C0C0C0; background-color: #FF5050' class='text-center'>Food</td>" +
 
-                 "<td style = 'color: #C0C0C0; background-color: deeppink' class='text-center'>&nbsp;Add +1&nbsp;</td>" +
+                 "<td style = 'color: #C0C0C0; background-color: #FF5050' class='text-center'>&nbsp;Add +1&nbsp;</td>" +
              "</tr>";
 
 

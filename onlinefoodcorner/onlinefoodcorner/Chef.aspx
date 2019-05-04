@@ -11,7 +11,7 @@
                     <div class="media">
                         <i class="fa fa-map-o"></i>
                         <div class="media-body">
-                            <h>Order Sent to chef !!!</h>
+                             <h3>My Menu Order</h3>
                         </div>
                     </div>
                    
@@ -32,17 +32,9 @@
 
 		<div style="padding:10px;">
 
-                  <h3>My Menu Order</h3>
+                 
 
-       
-            Total itmes <asp:Label ID="lbltitmes" runat="server" />
-            <br />
-            G.Total <asp:Label ID="lblgtotal" runat="server" />
-    <br />
-   
-         
-          
-        
+        <h3>Order Sent to chef !!!</h3>
     <br><br><br>        
         
          <asp:Label ID="lblmsg" runat="server" />

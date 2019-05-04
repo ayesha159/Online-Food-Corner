@@ -46,9 +46,28 @@ namespace onlinefoodcorner
                 foreach (DataRow dr in ds.Tables[0].Rows)
                 {
                     {
+                        if( _utype == "User")
+                        {
+                            Session["CurrentUser_ID"] = dr["Uid"];
+                            Response.Redirect("Menu.aspx");
+                        }
+                        else if (_utype == "Chef")
+                        {
+                            Session["CurrentUser_ID"] = dr["Uid"];
+                            Response.Redirect("ChefOrders.aspx");
+                        }
+                        else if (_utype == "DeliveryBoy")
+                        {
+                            Session["CurrentUser_ID"] = dr["Uid"];
+                            Response.Redirect("DeliveryBoyOrder.aspx");
+                        }
+                        else
+                        {
+                            Session["CurrentUser_ID"] = dr["Uid"];
+                            Response.Redirect("Items.aspx");
 
-                        Session["CurrentUser_ID"] = dr["Uid"];
-                        Response.Redirect("Menu.aspx");
+                        }
+
                     }
                 }
             }

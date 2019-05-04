@@ -17,7 +17,7 @@ namespace onlinefoodcorner
             //    Session["sesOrderTable"] = null;
             string _id = "0";
             string _qty = "0";
-            string _cat = "Fast Food";
+            string _cat = "Desert";
             string _retf = "";
 
             if (Request.QueryString["catname"].ToString() != null) { _id = Request.QueryString["catname"].ToString(); }

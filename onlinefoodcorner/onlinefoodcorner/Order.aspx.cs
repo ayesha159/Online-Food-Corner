@@ -20,12 +20,12 @@ namespace onlinefoodcorner
             }
             else
             { Response.Redirect("login.aspx"); }
+
             AJ_DataClass ajdbClass = new AJ_DataClass();
             DataSet ds = new DataSet();
            
             string qry = "SELECT        Catagory.CatID, Catagory.CatName, Items.ItId, Items.ItName, Items.ItPrice, Items.itDesc " +
-    " FROM Catagory INNER JOIN " +
-    "                          Items ON Catagory.CatID = Items.ICategoryID";
+              " FROM Catagory INNER JOIN " +  "Items ON Catagory.CatID = Items.ICategoryID";
 
             ds = ajdbClass.GetRecords("tbl", qry);
             DataTable dtMyTable_Adr;
@@ -38,9 +38,7 @@ namespace onlinefoodcorner
             string _litVal = "";
             foreach (DataRow dr in dtMyTable_Adr.Rows)
             {
-
-
-
+                               
                 if (dr["itqty"].ToString().Trim() != "0")
                 {
                     _litVal = _litVal + "<tr>" +
@@ -63,18 +61,18 @@ namespace onlinefoodcorner
                 }
 
             }
-            string _heaed = "<table style='border:black; width:100%;background-color:white' cellpadding = '1' cellspacing = '1' >" +
+            string _heaed = "<table style='border:black; width:100%; height:100%; background-color:white' cellpadding = '1' cellspacing = '1' >" +
 
 
-                 "<td style = 'color: #C0C0C0; background-color: deeppink' class='text-center'>Category</td>" +
-                 "<td style = 'color: #C0C0C0; background-color: deeppink' class='text-center'>Items</td>" +
-                 "<td style = 'color: #C0C0C0; background-color: deeppink' class='text-center'>Desc</td>" +
-                 "<td style = 'color: #C0C0C0; background-color: deeppink' class='text-center'>Price</td>" +
-                 "<td style = 'color: #C0C0C0; background-color: deeppink' class='text-center'>QTy</td>" +
-                 "<td style = 'color: #C0C0C0; background-color: deeppink' class='text-center'>Total</td>" +
-                 "<td style = 'color: #C0C0C0; background-color: deeppink' class='text-center'>Food</td>" +
+                 "<td style = 'color: #C0C0C0; background-color:#FF5050' class='text-center'>Category</td>" +
+                 "<td style = 'color: #C0C0C0; background-color:#FF5050' class='text-center'>Items</td>" +
+                 "<td style = 'color: #C0C0C0; background-color:#FF5050' class='text-center'>Desc</td>" +
+                 "<td style = 'color: #C0C0C0; background-color:#FF5050' class='text-center'>Price</td>" +
+                 "<td style = 'color: #C0C0C0; background-color:#FF5050' class='text-center'>QTy</td>" +
+                 "<td style = 'color: #C0C0C0; background-color:#FF5050' class='text-center'>Total</td>" +
+                 "<td style = 'color: #C0C0C0; background-color:#FF5050' class='text-center'>Food</td>" +
 
-                 "<td style = 'color: #C0C0C0; background-color: deeppink' class='text-center'>&nbsp;Add +1&nbsp;</td>" +
+                 "<td style = 'color: #C0C0C0; background-color:#FF5050' class='text-center'>&nbsp;Add +1&nbsp;</td>" +
              "</tr>";
 
 
@@ -100,9 +98,21 @@ namespace onlinefoodcorner
             string _Values = "'" + _UserID + "','" + DateTime.Now.ToShortDateString() + "','" + lblgtotal.Text + "','" + 
                 chef + "','" + delivr+ "','" + delivrtime + "','" + payRec  +       "'";
             string Result = ajdbClass.InsertIntoDatabase("[Order]", _DataFields, _Values);
+
+
+
+            //"OddOdid" = "OdId";
+            //string _itid = "Items.ItId";
+            //string _price = "itprice";
+            //string _quantity = "itqty";
+            //string _total = "ittotal";
+
+            //string _DataField1 = "[OddOdid] ,[Odditid] ,[OddPrice] ,[OddQuantity],[OddTotal]";
+            //string _Values1 = "'" + _odid + "','" + _itid + "','" + _price + "','" +
+            //    _quantity + "','" + _total  + "'";
+            //string Result1 = ajdbClass.InsertIntoDatabase("[OrderDetails]", _DataField1, _Values1);
+
             lblmsg.Text = Result + " Your order has been sent ";
-
-
 
         }
     }

@@ -103,22 +103,22 @@ namespace onlinefoodcorner {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl mnuChckOrder;
         
         /// <summary>
-        /// mnuOrder control.
+        /// mnuCfO control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl mnuOrder;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl mnuCfO;
         
         /// <summary>
-        /// mnuOdetails control.
+        /// mnuDbo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl mnuOdetails;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl mnuDbo;
         
         /// <summary>
         /// mnuLogOut control.

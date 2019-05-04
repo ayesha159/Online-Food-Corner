@@ -99,26 +99,33 @@
 
 										 <li runat="server" id="mnuLogin">
                                             <a href="login.aspx">Login</a>  </li> 
-						               <li runat="server" id="mnuRegister" visible="false" >   
+						               <li runat="server" id="mnuRegister"  >   
                                             <a href="register.aspx">Register</a> </li>
-                                        <li runat="server" id="mnuMenu" visible="false" >   
+                                        <li runat="server" id="mnuMenu"  >   
                                             <a href="menu.aspx">OUR MENU</a></li>
 
-										  <li runat="server" id="mnuItems" visible="false" >  
+										  <li runat="server" id="mnuItems" >  
                                             <a href="Items.aspx">New Items</a></li>
-										  <li runat="server" id="mnuIdetails" visible="false" > 
+										  <li runat="server" id="mnuIdetails"  > 
                                             <a href="ItemsDetails.aspx">Items</a></li>
-										  <li runat="server" id="mnuPurchase" visible="false" > 
+										  <li runat="server" id="mnuPurchase"  > 
                                             <a href="Purchase.aspx">Purchase</a></li>
-										  <li runat="server" id="mnuPdetails" visible="false" > 
+										  <li runat="server" id="mnuPdetails"> 
                                             <a href="PurchaseItemsDetails.aspx">Purchase Details</a>  </li>
-                                        <li runat="server" id="mnuChckOrder" visible="false" > 
+                                        <li runat="server" id="mnuChckOrder"  > 
                                             <a href="CheckOrders.aspx">User Orders</a>  </li>
-						                 <li runat="server" id="mnuOrder" visible="false" > 
-                                            <a href="Order.aspx">Order</a> </li>
-                                           <li runat="server" id="mnuOdetails" visible="false" > 
-                                             <a href="OrderDetails.aspx">Order Details</a> </li>
-                                          <li runat="server" id="mnuLogOut" visible="false" >
+						                
+                                           
+                                         <li runat="server" id="mnuCfO"  > 
+                                             <a href="ChefOrders.aspx">Chef Orders </a> </li>
+
+                                            <li runat="server" id="mnuDbo"  > 
+                                             <a href="DeliveryBoyOrders.aspx">DeliveryBoy Orders</a> </li>
+
+
+
+
+                           <li runat="server" id="mnuLogOut" visible="false" >
                               <a href="logout.aspx">Log Out</a> 
                         </li>
 

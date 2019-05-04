@@ -29,7 +29,6 @@
                     AutoGenerateColumns="false"  OnPageIndexChanging="GridView1_PageIndexChanging" OnRowCancelingEdit="GridView1_RowCancelingEdit" OnRowDeleting="GridView1_RowDeleting" OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating" Width="674px">  
                     <Columns >  
                         <asp:BoundField DataField="ItId" HeaderText="ID" ReadOnly="True" SortExpression="ID" AccessibleHeaderText="center" />
-            
                         <asp:BoundField DataField="ItName" HeaderText="Name"  HeaderStyle-BorderStyle="Solid" />  
                         <asp:BoundField DataField="ItPrice" HeaderText="Price"  HeaderStyle-BorderStyle="Solid" />  
                         <asp:BoundField DataField="ItQuantity" HeaderText="Quantity"  HeaderStyle-BorderStyle="Solid"/>  
@@ -40,8 +39,7 @@
             <div>  
                 <asp:Label ID="lblresult" runat="server"></asp:Label>  
             </div>  
-        
-            
+ 
         </div>
     </div>
     <!-- container end -->

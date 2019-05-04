@@ -14,11 +14,12 @@ namespace onlinefoodcorner
 
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+
+            if (Session["CurrentUser_ID"] == null) Response.Redirect("login.aspx");
             AJ_DataClass ajdbClass = new AJ_DataClass();
             DataSet ds = new DataSet();
 
-            string qry = "SELECT [User].UId, [User].UName,  [User].UCellNo,[Order].OdId, [Order].OdGtotal, [Order].OdDate FROM [User] INNER JOIN [Order] On [User].UId = [Order].OdUserId";
+            string qry = "SELECT [User].UId, [User].UName,  [User].UCellNo,[Order].OdId, [Order].OdGtotal, [Order].OdFwdFoodCheff FROM [User] INNER JOIN [Order] On [User].UId = [Order].OdUserId";
 
              ds = ajdbClass.GetRecords("tbl", qry);
            
@@ -40,7 +41,7 @@ namespace onlinefoodcorner
                    " <td style = 'text-align: center;' >" + dr["UCellNo"].ToString().Trim() + "</td> " +
                    " <td style = 'text-align: center;' >" + dr["OdGtotal"].ToString().Trim() + "</td> " +
 
-                   " <td style = 'text-align: center;' >" + dr["OdDate"].ToString().Trim() + "</td> " +
+                   " <td style = 'text-align: center;' >" + dr["OdFwdFoodCheff"].ToString().Trim() + "</td> " +
                    " <td style = 'text-align: center;' ><a href = 'Chef.aspx?id=" + dr["OdId"].ToString().Trim() + "'> SendToChef </a></td> " +
                          
                                 " </tr>";
@@ -54,7 +55,7 @@ namespace onlinefoodcorner
                  "<td style = 'color: #C0C0C0; background-color: deeppink' class='text-center'>UserName</td>" +
                  "<td style = 'color: #C0C0C0; background-color: deeppink' class='text-center'>CellNo</td>" +
                  "<td style = 'color: #C0C0C0; background-color: deeppink' class='text-center'>Price</td>" +
-                 "<td style = 'color: #C0C0C0; background-color: deeppink' class='text-center'>Date</td>" +
+                 "<td style = 'color: #C0C0C0; background-color: deeppink' class='text-center'>ForwardChef</td>" +
                  
                  "<td style = 'color: #C0C0C0; background-color: deeppink' class='text-center'>&nbsp;Sent to Chef &nbsp;</td>" +
              "</tr>";

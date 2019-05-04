@@ -21,10 +21,10 @@
                           User Type 
                             </label>
                           <asp:DropDownList ID="cboUtype" runat="server"  class="btn btn-secondary btn-lg dropdown-toggle">
-                              <asp:ListItem Selected="True">
-                                Admin </asp:ListItem>
-                              <asp:ListItem>Chef</asp:ListItem>
+                              <asp:ListItem Selected="True">Admin </asp:ListItem>
                                 <asp:ListItem>User</asp:ListItem>
+                              <asp:ListItem>Chef</asp:ListItem>
+                              <asp:ListItem>DeliveryBoy</asp:ListItem>
                               </asp:DropDownList>
                         </div>    
                         <div class="col-md-6">
