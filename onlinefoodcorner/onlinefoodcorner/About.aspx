@@ -2,8 +2,10 @@
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-	<title>Favorites a Hotels and Restaurants Category Flat Bootstrap Responsive Website Template | About :: w3layouts</title>
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Favorites a Hotels and Restaurants Category Flat Bootstrap Responsive Website Template | Home :: w3layouts</title>
 	<!--fonts-->
 		<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
@@ -39,13 +41,16 @@
 	<!-- start-smoth-scrolling -->
 
 </head>
+
 <body>
    <!-- header -->
-<div class="header">
+
+  <div class="header">
 	<div class="container">
 		<div class="top-header">
 				<div class="header-left">
 					<p>Place your order and get 20% off on each price</p>
+				</div>
 				
 				<!-- start search-->
 				    <div class="search-box">
@@ -77,7 +82,6 @@
 		</div>
 	</div>
 </div>
-
 <!-- //header -->
 <!-- banner -->
 <div class="banner-slider">

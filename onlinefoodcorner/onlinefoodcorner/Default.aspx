@@ -114,19 +114,14 @@
 							<div class="navigation text-center">
 								<span class="menu"><img src="images/menu.png" alt=""/></span>
 									<ul class="nav1">
-										<li><a class="active" href="index.html">HOME</a></li>
-										<li><a href="about.aspx">ABOUT</a></li>
-										<li><a href="Items.aspx">OUR MENU</a></li>
-										<li><a href="contact.aspx">CONTACT</a></li>
-										<li><a href="login.aspx">Login</a>  </li> 
-						                <li><a href="register.aspx">Register</a> </li>
+										<asp:Literal ID="litmymenu" runat="server" />
 									</ul>
 								<div class="clearfix"></div>
 
 							</div>
 							<!-- point burst circle -->
 							<div class="logo">
-								<a href="index.html">
+								<a href="Default.aspx">
 									<div class="burst-36 ">
 									   <div>
 											<div><span><img src="images/logo.png" alt=""/></span></div>

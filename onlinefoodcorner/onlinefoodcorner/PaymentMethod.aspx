@@ -31,7 +31,8 @@
  <asp:ListItem>Visa</asp:ListItem>
  <asp:ListItem>Mastercard</asp:ListItem>
  <asp:ListItem>American Express</asp:ListItem>
- </asp:DropDownList>
+ </asp:DropDownList>
+
 											</div>
 										    <div class="col-md-6">
                             <label for="contact-name">Card Number
@@ -81,6 +82,7 @@ ControlToValidate="tbStreetAddress" required/>
         </div>
     </div>
     <!-- container end -->
-</section>
+</section>
+
 
 </asp:Content>

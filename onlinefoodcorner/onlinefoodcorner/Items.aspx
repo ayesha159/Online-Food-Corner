@@ -32,7 +32,12 @@
                             </label>
                            <asp:TextBox ID="txtname" runat="server"  class="form-control main"  required/>
                         </div>
-
+                          
+                        <div class="col-md-6">
+                          <label>Catagory</label>
+                            <asp:DropDownList ID="cboCatgory" runat="server"  class="btn btn-secondary btn-lg dropdown-toggle" style="border:1px;" />
+                            
+                        </div>    
                              
                         <div class="col-md-6">
                             <label for="contact-name">Price

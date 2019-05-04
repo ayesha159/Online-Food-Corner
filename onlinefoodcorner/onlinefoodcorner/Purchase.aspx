@@ -30,11 +30,11 @@
                         </div>
 
                              
-                        <div class="col-md-6">
+        <div class="col-md-6">
                             <label for="contact-name">Price
                                         <span>*</span>
                             </label>
-                           <asp:TextBox ID="txtPrice" runat="server"  class="form-control main"   required/>
+                           <asp:TextBox ID="txtPrice" runat="server"  class="form-control main" required/>
                         </div>
         <div class="col-md-6">
                             <label for="contact-name">Quantity
@@ -45,10 +45,14 @@
          
        <div class="col-md-6">
                                    <asp:Button ID = "btnAdd" runat="server" class="btn-success" Height="45px" 
-                                           onclick="BtnAdd_Click" Text="ADD Purchase Items" Width="219px" style="margin-left: 37px; margin-top: 11px;" />
-    </div>
+                                           onclick="BtnAdd_Click" Text="ADD" Width="188px" style="margin-left: 37px; margin-top: 11px;" />
+   
+                               </div>
            
 
+                        <div class="col-md-12">
+                          <asp:Label ID="lblmsg" runat="server"  />
+                        </div>
     </form>
             </div>
  

@@ -20,88 +20,46 @@
                 <!-- address end -->
             </div>
             <div class="col-md-8">
-                <div class="contact-form">
+                <div class="contact-form" runat="server">
                     <!-- contact form start -->
+         <form action="#" class="row" runat="server">
+                       <div id="bodyCenter">
+
+<div id="Round">
+
+<a name="#city"></a>
+
+
+
+		<div style="padding:10px;">
+
+                  <h3>My Menu Order</h3>
+
        
-                    <form id="form1" runat="server">
-                             
-                        <div class="col-md-6">
-                            <label for="contact-name">Name
-                                        <span>*</span>
-                            </label>
-                           <asp:TextBox ID="txtName" runat="server"  class="form-control main"  required/>
-                        </div>
-                        
-                        <div class="col-md-6">
-                            <label for="contact-name">Email
-                                        <span>*</span>
-                            </label>
-                           <asp:TextBox ID="txtemail" runat="server"  class="form-control main"  required/>
-                        </div>
-
-                             
-                        <div class="col-md-6">
-                            <label for="contact-name">Cell No
-                                        <span>*</span>
-                            </label>
-                           <asp:TextBox ID="txtCellNo" runat="server"  class="form-control main"  required/>
-                        </div>
-                        
-                             
-                        <div class="col-md-6">
-                            <label for="contact-name">Address
-                                        <span>*</span>
-                            </label>
-                           <asp:TextBox ID="txtAddress" runat="server"  class="form-control main"  required/>
-                        </div>
-                        
-                             
-                        <div class="col-md-6">
-                            <label for="contact-name">Order 
-                                        <span>*</span>
-                            </label>
-                           <asp:TextBox ID="txtOrder" runat="server"  class="form-control main"  required/>
-                        </div>
-                        
-                             
-                        <div class="col-md-6">
-                            <label for="contact-name">Price
-                                        <span>*</span>
-                            </label>
-                           <asp:TextBox ID="txtPrice" runat="server"  class="form-control main"  required/>
-                        </div>
-                        
-                             
-                        <div class="col-md-6">
-                            <label for="contact-name">Qunatity
-                                        <span>*</span>
-                           
-                            </label>
-                           <asp:TextBox ID="txtQuantity" runat="server"  class="form-control main"  required/>
-                        </div>
-                        
-                  
-                             
-                
-                        
-
-                        <div class="col-md-12">
-                            <asp:Label ID="lblmsg" runat="server" />
-                            
-                        </div>
-                        
-                        <div class="col-md-12">
-                            <asp:Button ID="btnSend" runat="server" class="btn btn-style-one"  Text="Send"  />
-                        </div>
-                        
-
-
-                         </form>
+            Total itmes <asp:Label ID="lbltitmes" runat="server" />
+            <br />
+            G.Total <asp:Label ID="lblgtotal" runat="server" />
+    <br />
+    <br>        
+             <asp:Button ID="btnFoodMenu" runat="server" Text="Food Menu" OnClick="btnFoodMenu_Click" CssClass="bg-primary" />
+         
+         <br />
+         
+            <asp:Literal ID="litDnr" runat="server" />
+        
+    <br><br><br>        
+         <asp:Button ID="btnSubmit" runat="server" Text="Submit " OnClick="btnSubmit_Click" />
+         <br />
+         <asp:Label ID="lblmsg" runat="server" />
+        </div>
+    </div>
+                           </div>
+             </form>
                     <!-- contact form end -->
                 </div>
             </div>
         </div>
-    </div>
+    
     <!-- container end -->
 </section>
 </asp:Content>

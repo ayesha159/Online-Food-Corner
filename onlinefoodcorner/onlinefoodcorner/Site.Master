@@ -55,11 +55,9 @@
 				<!-- start search-->
 				    <div class="search-box">
 					    <div id="sb-search" class="sb-search">
-							<form>
-								<input class="sb-search-input" placeholder="Enter your search item..." type="search" name="search" id="search">
-								<input class="sb-search-submit" type="submit" value="">
-								<span class="sb-icon-search"> </span>
-							</form>
+							<asp:Label ID="lblUser" runat="server" />
+                            <asp:Label ID="lblUserRole" runat="server" />
+            
 						</div>
 				    </div>
 					<!-- search-scripts -->
@@ -93,11 +91,37 @@
 								<span class="menu"><img src="images/menu.png" alt=""/></span>
 									<ul class="nav1">
 										<li><a class="active" href="Default.aspx">HOME</a></li>
-										<li><a href="about.aspx">ABOUT</a></li>
-										<li><a href="menu.aspx">OUR MENU</a></li>
-										<li><a href="contact.aspx">CONTACT</a></li>
-										<li><a href="login.aspx">Login</a>  </li> 
-						                <li><a href="register.aspx">Register</a> </li>
+										<li>
+                                            <a href="about.aspx">ABOUT</a></li>
+										
+										<li>
+                                            <a href="contact.aspx">CONTACT</a></li>
+
+										 <li runat="server" id="mnuLogin">
+                                            <a href="login.aspx">Login</a>  </li> 
+						               <li runat="server" id="mnuRegister" visible="false" >   
+                                            <a href="register.aspx">Register</a> </li>
+                                        <li runat="server" id="mnuMenu" visible="false" >   
+                                            <a href="menu.aspx">OUR MENU</a></li>
+
+										  <li runat="server" id="mnuItems" visible="false" >  
+                                            <a href="Items.aspx">New Items</a></li>
+										  <li runat="server" id="mnuIdetails" visible="false" > 
+                                            <a href="ItemsDetails.aspx">Items</a></li>
+										  <li runat="server" id="mnuPurchase" visible="false" > 
+                                            <a href="Purchase.aspx">Purchase</a></li>
+										  <li runat="server" id="mnuPdetails" visible="false" > 
+                                            <a href="PurchaseItemsDetails.aspx">Purchase Details</a>  </li>
+                                        <li runat="server" id="mnuChckOrder" visible="false" > 
+                                            <a href="CheckOrders.aspx">User Orders</a>  </li>
+						                 <li runat="server" id="mnuOrder" visible="false" > 
+                                            <a href="Order.aspx">Order</a> </li>
+                                           <li runat="server" id="mnuOdetails" visible="false" > 
+                                             <a href="OrderDetails.aspx">Order Details</a> </li>
+                                          <li runat="server" id="mnuLogOut" visible="false" >
+                              <a href="logout.aspx">Log Out</a> 
+                        </li>
+
 									</ul>
                                  <div class="clearfix"></div>
 									<!-- script for menu -->
@@ -113,7 +137,7 @@
 							</div>
 							<!-- point burst circle -->
 							<div class="logo">
-								<a href="index.html">
+								<a href="Default.aspx/">
 									<div class="burst-36 ">
 									   <div>
 											<div><span><img src="images/logo.png" alt=""/></span></div>

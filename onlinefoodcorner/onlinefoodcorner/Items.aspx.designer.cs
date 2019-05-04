@@ -40,6 +40,15 @@ namespace onlinefoodcorner {
         protected global::System.Web.UI.WebControls.TextBox txtname;
         
         /// <summary>
+        /// cboCatgory control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList cboCatgory;
+        
+        /// <summary>
         /// txtPrice control.
         /// </summary>
         /// <remarks>

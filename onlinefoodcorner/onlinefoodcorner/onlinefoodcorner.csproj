@@ -163,6 +163,7 @@
     <Content Include="App_Data\js\simpleCart.min.js" />
     <Content Include="App_Data\js\uisearch.js" />
     <Content Include="CheckOrders.aspx" />
+    <Content Include="Chef.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -172,6 +173,7 @@
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="FoodMenuItemAdd.aspx" />
     <Content Include="ForgotPwd.aspx" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -187,6 +189,7 @@
     <Content Include="Items.aspx" />
     <Content Include="ItemsDetails.aspx" />
     <Content Include="login.aspx" />
+    <Content Include="logout.aspx" />
     <Content Include="Menu.aspx" />
     <Content Include="Order.aspx" />
     <Content Include="OrderDetails.aspx" />
@@ -228,7 +231,6 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Bundle.config" />
-    <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="About.aspx.cs">
@@ -255,6 +257,13 @@
     <Compile Include="CheckOrders.aspx.designer.cs">
       <DependentUpon>CheckOrders.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Chef.aspx.cs">
+      <DependentUpon>Chef.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chef.aspx.designer.cs">
+      <DependentUpon>Chef.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -268,6 +277,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FoodMenuItemAdd.aspx.cs">
+      <DependentUpon>FoodMenuItemAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FoodMenuItemAdd.aspx.designer.cs">
+      <DependentUpon>FoodMenuItemAdd.aspx</DependentUpon>
     </Compile>
     <Compile Include="ForgotPwd.aspx.cs">
       <DependentUpon>ForgotPwd.aspx</DependentUpon>
@@ -299,6 +315,13 @@
     </Compile>
     <Compile Include="login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="logout.aspx.cs">
+      <DependentUpon>logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="logout.aspx.designer.cs">
+      <DependentUpon>logout.aspx</DependentUpon>
     </Compile>
     <Compile Include="Menu.aspx.cs">
       <DependentUpon>Menu.aspx</DependentUpon>
@@ -356,13 +379,6 @@
     </Compile>
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
-    </Compile>
-    <Compile Include="Site.Mobile.Master.cs">
-      <DependentUpon>Site.Mobile.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Site.Mobile.Master.designer.cs">
-      <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>

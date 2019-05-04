@@ -1,12 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Collections;
+using System.Configuration;
+using System.Data;
 using System.Linq;
 using System.Web;
+using System.Web.Security;
 using System.Web.UI;
+using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
-using System.Data;
-using System.Data.SqlClient; //this namespace is for sqlclient server  
-using System.Configuration;
+using System.Web.UI.WebControls.WebParts;
+using System.Xml.Linq;
+using System.Data.SqlClient;
 
 namespace onlinefoodcorner
 {
@@ -19,47 +23,30 @@ namespace onlinefoodcorner
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {
-            //    SqlConnection con = new SqlConnection();
-            //    try
-            //    {
-            //        string  _email  = txtemail.Text.Trim();
-            //        string _pwd = txtpwd.Text.Trim();
-            //        con.Open();
-            //        string qry = "select * from [User] where UEmail='" + _email + "' and UPwd='" + _pwd + "'";
-            //        SqlCommand cmd = new SqlCommand(qry, con);
-            //        SqlDataReader sdr = cmd.ExecuteReader();
-            //        if (sdr.Read())
-            //        {
-            //            lblmsg.Text = "Login Sucess......!!";
-            //        }
-            //        else
-            //        {
-            //            lblmsg.Text = "UserId & Password Is not correct Try again..!!";
-
-            //        }
-            //        con.Close();
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        Response.Write(ex.Message);
-            //    }
+            int RowCount;
 
             AJ_DataClass myClass = new AJ_DataClass();
             DataSet ds = new DataSet();
+            DataTable dt = new DataTable();
             string _email = txtemail.Text.Trim();
             string _pwd = txtpwd.Text.Trim();
-            string qry = "select * from [User] where UEmail='" + _email + "' and UPwd='" + _pwd + "'";
+            string _utype = cboUtype.SelectedItem.ToString();
+            string qry = "select * from [User] where UEmail='" + _email + "' and UPwd='" + _pwd + "' and Utype='" + _utype + "'";
             ds = myClass.GetRecords("[User]", qry);
+          //  lblmsg.Text = "user successfully login!";
+            RowCount = dt.Rows.Count;
 
             if (ds.Tables[0].Rows.Count == 0)
             {
                 lblmsg.Text = "Invalid User";
             }
+
             else
             {
                 foreach (DataRow dr in ds.Tables[0].Rows)
                 {
                     {
+
                         Session["CurrentUser_ID"] = dr["Uid"];
                         Response.Redirect("Menu.aspx");
                     }

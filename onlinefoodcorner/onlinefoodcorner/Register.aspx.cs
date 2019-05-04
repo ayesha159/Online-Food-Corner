@@ -22,6 +22,7 @@ namespace onlinefoodcorner
             string _email = txtEmail.Text;
             string _contact = txtcontact.Text;
             string _addr = txtaddr.Text;
+            string _utype = cboUtype.SelectedItem.ToString();
             string _pwd = txtPwd.Text;
 
             // Check if user already have an account. *email
@@ -33,11 +34,11 @@ namespace onlinefoodcorner
             { lblmsg.Text = "Password MissMatched !"; txtPwd2.Focus(); return; }
             else
             { lblmsg.Text = ""; }
-            string _DataFields = "UName,UAddress,UCellNo,UEmail,UPwd";
+            string _DataFields = "UName,UAddress,UCellNo,UEmail, Utype,UPwd";
             string _Values = "'" + _name + "','" 
                     + _addr + "','" +  _contact + "','"
 
-                    +  _email + "','" + _pwd  + "'";
+                    +  _email + "','" + _utype   + "','" + _pwd  + "'";
 
 
 

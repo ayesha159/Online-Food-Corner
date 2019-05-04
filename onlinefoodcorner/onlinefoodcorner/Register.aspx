@@ -13,14 +13,24 @@
 					 <p>Welcome, please enter the following details to continue.</p>
 				       
                        <div class="contact-form">
-                    <!-- contact form start -->
+                   
                     <form action="#" class="row" runat="server">
                         
                         <div class="col-md-6">
                             <label> <h4> Name</h4><span>*</span></label>
                            <asp:TextBox ID="txtName" runat="server"  class="form-control" required/>
                         </div>
-                        
+                    <div class="col-md-6">
+                            <label>
+                       <h4>   User Type </h4>
+                            </label>
+                          <asp:DropDownList ID="cboUtype" runat="server"  class="btn btn-secondary btn-lg dropdown-toggle">
+                              <asp:ListItem Selected="True">
+                                Admin </asp:ListItem>
+                              <asp:ListItem>Chef</asp:ListItem>
+                                <asp:ListItem>User</asp:ListItem>
+                              </asp:DropDownList>
+                        </div>    
                                               
                         <div class="col-md-12">
                             <label>
@@ -60,8 +70,6 @@
                           <asp:Label ID="lblmsg" runat="server"  />
                         </div>
 
-
-                        <!-- submit button -->
                         <div class="col-md-12 text-right">
                           <asp:Button ID="btnRegister" runat="server"  class="btn btn-style-one"  Text="Register" OnClick="btnRegister_Click" />
                         </div>
