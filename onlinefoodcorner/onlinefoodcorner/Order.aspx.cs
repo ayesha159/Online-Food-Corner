@@ -89,30 +89,74 @@ namespace onlinefoodcorner
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
+            //AJ_DataClass ajdbClass = new AJ_DataClass();
+            //bool chef = false;
+            //bool delivr = false;
+            //string delivrtime = DateTime.Now.ToShortDateString() ;
+            //bool payRec = false;
+            //string _DataFields = "OdUserId,OdDate,OdGtotal ,OdFwdFoodCheff,OdDelivered ,OdDeliveredTime  ,OdPaymentRecieved";
+            //string _Values = "'" + _UserID + "','" + DateTime.Now.ToShortDateString() + "','" + lblgtotal.Text + "','" + 
+            //    chef + "','" + delivr+ "','" + delivrtime + "','" + payRec  +       "'";
+            //string Result = ajdbClass.InsertIntoDatabase("[Order]", _DataFields, _Values);
+
+            ////"OddOdid" = "OdId";
+            ////string _itid = "Items.ItId";
+            ////string _price = "itprice";
+            ////string _quantity = "itqty";
+            ////string _total = "ittotal";
+
+            ////string _DataField1 = "[OddOdid] ,[Odditid] ,[OddPrice] ,[OddQuantity],[OddTotal]";
+            ////string _Values1 = "'" + _odid + "','" + _itid + "','" + _price + "','" +
+            //// _quantity + "','" + _total  + "'";
+            ////string Result1 = ajdbClass.InsertIntoDatabase("[OrderDetails]", _DataField1, _Values1);
+
+            //lblmsg.Text = Result + " Your order has been sent ";
+
             AJ_DataClass ajdbClass = new AJ_DataClass();
-            bool chef = false;
-            bool delivr = false;
-            string delivrtime = DateTime.Now.ToShortDateString() ;
-            bool payRec = false;
-            string _DataFields = "OdUserId,OdDate,OdGtotal ,OdFwdFoodCheff,OdDelivered ,OdDeliveredTime  ,OdPaymentRecieved";
-            string _Values = "'" + _UserID + "','" + DateTime.Now.ToShortDateString() + "','" + lblgtotal.Text + "','" + 
-                chef + "','" + delivr+ "','" + delivrtime + "','" + payRec  +       "'";
-            string Result = ajdbClass.InsertIntoDatabase("[Order]", _DataFields, _Values);
+            DataTable dtMyTable_Adr;
+            if (Session["sesOrderTable"] != null)
+            {
+                dtMyTable_Adr = (DataTable)Session["sesOrderTable"];
+            }
+            else return;
 
 
+            foreach (DataRow dr in dtMyTable_Adr.Rows)
+            {
+                if (dr["itqty"].ToString().Trim() != "0")
+                {
+                    string _DataFields = "OAdminId,OdUserId,OdDate ,OdGtotal,OdFwdFoodCheff ,OdDelivered  ,OdDeliveredTime,OdPaymentRecieved ";
+                    string _Values = "'1','1','" + DateTime.Now.ToShortDateString() + "','" + lblgtotal.Text + "','0','0','" + DateTime.Now.ToShortDateString() + "','0' ";
+                    string Result = ajdbClass.InsertIntoDatabase("[Order]", _DataFields, _Values);
+                    lblmsg.Text = Result + " Order has been sent ";
+                }
+                break;
+            }
 
-            //"OddOdid" = "OdId";
-            //string _itid = "Items.ItId";
-            //string _price = "itprice";
-            //string _quantity = "itqty";
-            //string _total = "ittotal";
+            string _lastid = "0";
+            DataSet ds = new DataSet();
+            ds = ajdbClass.GetRecords("tbl", "select odid from [Order] ");
+            foreach (DataRow dr in ds.Tables[0].Rows) { _lastid = dr["odid"].ToString().Trim(); }
 
-            //string _DataField1 = "[OddOdid] ,[Odditid] ,[OddPrice] ,[OddQuantity],[OddTotal]";
-            //string _Values1 = "'" + _odid + "','" + _itid + "','" + _price + "','" +
-            //    _quantity + "','" + _total  + "'";
-            //string Result1 = ajdbClass.InsertIntoDatabase("[OrderDetails]", _DataField1, _Values1);
 
-            lblmsg.Text = Result + " Your order has been sent ";
+            foreach (DataRow dr in dtMyTable_Adr.Rows)
+            {
+                if (dr["itqty"].ToString().Trim() != "0")
+                {
+                    string st = dr["itid"].ToString().Trim();
+                    string _DataFields = "OddOdid,Odditid,OddPrice ,OddQuantity,OddTotal ";
+                    string _Values = "'" + _lastid + "','" + dr["itid"].ToString().Trim() + "','" + dr["itprice"].ToString().Trim() + "','" + dr["itqty"].ToString().Trim() + "','" + lblgtotal.Text.Trim() + "' ";
+
+                    string Result = ajdbClass.InsertIntoDatabase("OrderDetails", _DataFields, _Values);
+                    lblmsg.Text = Result + " Order has been sent ";
+                }
+
+            }
+
+            Session["sesOrderTable"] = null;
+            Session["sestitmes"] = null;
+            Session["sesgtotal"] = null;
+         //   Response.Redirect("FoodMenuMyOrder.aspx");
 
         }
     }

@@ -11,28 +11,54 @@ using System.Web.UI.WebControls.WebParts;
 using System.Xml.Linq;
 using CrystalDecisions.CrystalReports.Engine;
 
+using System.Data.SqlClient;
+
+
 namespace onlinefoodcorner
 {
     public partial class userReport : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            ReportDocument crystalReport = new ReportDocument();
+            crystalReport.Load(Server.MapPath("UserDetails.rpt"));
+            user dsCustomers = GetData("select * from [User]");
+            crystalReport.SetDataSource(dsCustomers);
+            CrystalReportViewer1.ReportSource = crystalReport;
 
-            ReportDocument rpt = new ReportDocument();
+            var stream = crystalReport.ExportToStream(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat);
+            //   CrystalDecisions.[Shared].ExportFormatType.PortableDocFormat);
+            var pdfbyteArray = new byte[stream.Length];
+          //  new byte[bufferByte.Length];
 
-            rpt.Load(Server.MapPath("UserDetails.rpt"));
-            
-      //   report.SetDatabaseLogon("username", "pwd", @"server", "database");
-      //   report.SetDatabaseLogon("username", "pwd", @"server", "database");
-            
-       //  rptviewer.ReportSource = report;
+            stream.Position = 0;
+            stream.Read(pdfbyteArray, 1, Convert.ToInt32(stream.Length));
+            Context.Response.ClearContent();
+            Context.Response.ClearHeaders();
+            Context.Response.AddHeader("content-disposition", "filename=Report.pdf");
+            Context.Response.ContentType = "application/pdf";
+            Context.Response.AddHeader("content-length", pdfbyteArray.Length.ToString());
+            Context.Response.BinaryWrite(pdfbyteArray);
 
-            // EmployeeList rpt = new EmployeeList();
-            // crystalReportViewer1.ReportSource = rpt;
-          //  UserDetails rpt = new UserDetails();
-           // ReportDocument cryRpt = new ReportDocument();
-           // cryRpt.Load(Server.MapPath("UserDetails.rpt"));
-            CrystalReportViewer1.ReportSource = rpt;
+        }
+        private user GetData(string query)
+        {
+            string conString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+            SqlCommand cmd = new SqlCommand(query);
+            using (SqlConnection con = new SqlConnection(conString))
+            {
+                using (SqlDataAdapter sda = new SqlDataAdapter())
+                {
+                    cmd.Connection = con;
+
+                    sda.SelectCommand = cmd;
+                    using (user dsCustomers = new user())
+                    {
+                        sda.Fill(dsCustomers, "DataTable1");
+                        return dsCustomers;
+                    }
+                }
+            }
         }
     }
 }
